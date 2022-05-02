@@ -1,10 +1,11 @@
 FROM denoland/deno:1.17.1
-
+EXPOSE 8080
 WORKDIR /app
-
 USER deno
+COPY deps.ts .
+RUN deno cache deps.ts
+COPY . .
+RUN deno cache server.ts
+RUN mkdir -p /var/tmp/log
 
-# These steps will be re-run upon each file change in your working directory:
-ADD . .
-
-CMD ["run", "--allow-all", "server.ts"]
+CMD ["run", "--allow-net", "--allow-env", "server.ts"]
