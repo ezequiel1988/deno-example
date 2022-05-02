@@ -8,4 +8,4 @@ COPY . .
 RUN deno cache server.ts
 RUN mkdir -p /var/tmp/log
 
-CMD ["run", "--allow-net", "--allow-env", "server.ts"]
+CMD ["run", "--allow-net", "--allow-env", "--allow-read", "server.ts"]
