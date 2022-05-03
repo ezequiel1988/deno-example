@@ -1,7 +1,4 @@
-//export { Application, Router, Context, send } from "https://deno.land/x/oak/mod.ts";
 export { Application, type HandlerFunc, type MiddlewareFunc } from "https://deno.land/x/abc@v1.3.3/mod.ts";
-
-export type { RouterMiddleware } from "https://deno.land/x/oak/mod.ts";
 
 export { config } from "https://deno.land/x/dotenv/mod.ts";
 
