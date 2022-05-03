@@ -1,15 +1,14 @@
-import { Router } from '../../deps.ts';
+import { app } from "./HomeRoute.ts";
 import { verifyUser,
- loginUser,
- createUser,
- getUser,
- getAllUsers } from '../Controller/User/UserController.ts';
+    loginUser,
+    createUser,
+    getUser,
+    getAllUsers } from '../Controller/User/UserController.ts';
+    
 
-const router = new Router();
+app.get('/api/v1/users', getAllUsers);
+app.get('/api/v1/users/:email', getUser);
+app.post('/api/v1/users', createUser);
+app.post('/api/v1/users/login', loginUser);
 
-router.get('/api/v1/users', verifyUser,getAllUsers);
-router.get('/api/v1/users/:email', getUser);
-router.post('/api/v1/users', createUser);
-router.post('/api/v1/users/login', loginUser);
-
-export { router }
+export { app }

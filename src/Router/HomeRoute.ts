@@ -1,13 +1,12 @@
-import { Router } from '../../deps.ts';
+import { Application } from "../../deps.ts";
 
+const app = new Application();
 
-const router = new Router();
-
-router.get('/', async (ctx) => {
-    ctx.response.body = {
+app.get('/', async (ctx) => {
+    return {
         message: "Gracias por usar nuestra API. Para más información envie un correo a: ekiolivier@gmail.com"
     };
 });
 
 
-export { router }
+export { app }
