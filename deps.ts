@@ -1,7 +1,5 @@
 export { Application, type HandlerFunc, type MiddlewareFunc } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 
-export { config } from "https://deno.land/x/dotenv/mod.ts";
-
 export { Bson, MongoClient, type ObjectId } from "https://deno.land/x/mongo@v0.29.4/mod.ts";
 
 export * as bcrypt from "https://deno.land/x/bcrypt/mod.ts";

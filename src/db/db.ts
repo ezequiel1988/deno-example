@@ -1,10 +1,9 @@
-import { MongoClient, config } from '../../deps.ts'
+import { MongoClient } from '../../deps.ts'
 
 const client = new MongoClient();
-const URI = config().URI;
 
     try {
-        await client.connect(URI);
+        await client.connect('mongodb+srv://admin:1q2w3e4r5t@example.oevro.mongodb.net/deno-db?authMechanism=SCRAM-SHA-1&retryWrites=true&w=majority');
         console.log('Connected to database');
         
     } catch (error) {
